@@ -26,17 +26,15 @@ void setup() {
   Serial.print("Blynk Connecting");
   Blynk.begin(auth, ssid, pass);
   Serial.print("Blynk Connected");
-
   
   // Setup a function to be called every second
   timer.setInterval(500L, turnOffGarage);
 
 }
 
-
-
 BLYNK_CONNECTED() {
-    Blynk.syncAll();
+    #Blynk.syncAll();
+    Blynk.syncVirtual(V1)
 }
 
 BLYNK_WRITE(V1){
